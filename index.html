@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>山顶资本 - 创新投资的引领者</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+    <div class="music-player">
+        <audio id="bgMusic" loop autoplay>
+            <!-- 请自行添加音乐文件 -->
+            <source src="music/周杰伦-你听得到.mp3" type="audio/mpeg">
+        </audio>
+        <button id="musicToggle" class="music-toggle">
+            <svg class="music-icon" viewBox="0 0 24 24">
+                <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+            </svg>
+        </button>
+    </div>
+    <script>
+            // 点击按钮控制播放/暂停
+            musicToggle.addEventListener('click', function() {
+                if (!isPlaying) {
+                    let playPromise = bgMusic.play();
+                    
+                    if (playPromise !== undefined) {
+                        playPromise.then(() => {
+                            isPlaying = true;
+                            musicToggle.classList.add('playing');
+                        })
+                        .catch(error => {
+                            console.log("播放失败:", error);
+                        });
+                    }
+                } else {
+                    bgMusic.pause();
+                    isPlaying = false;
+                    musicToggle.classList.remove('playing');
+                }
+            });
+
+            // 监听音频播放状态
+            bgMusic.addEventListener('playing', function() {
+                isPlaying = true;
+                musicToggle.classList.add('playing');
+            });
+
+            bgMusic.addEventListener('pause', function() {
+                isPlaying = false;
+                musicToggle.classList.remove('playing');
+            });
+        });
+    </script>
+    <div id="particles-js"></div>
+    
+    <header>
+        <nav>
+            <div class="logo">
+                <!-- 使用SVG格式的logo,更清晰且支持缩放 -->
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- 山形图案 -->
+                    <path d="M20 5L35 35H5L20 5Z" fill="#007AFF"/>
+                    <!-- 小山峰 -->
+                    <path d="M20 15L28 32H12L20 15Z" fill="#1a1a1a"/>
+                    <!-- 圆形光环 -->
+                    <circle cx="20" cy="20" r="18" stroke="#007AFF" stroke-width="2" fill="none"/>
+                </svg>
+                <span>山顶资本</span>
+            </div>
+            <ul>
+                <li><a href="#home">首页</a></li>
+                <li><a href="#about">关于我们</a></li>
+                <li><a href="#investment">投资策略</a></li>
+                <li><a href="#portfolio">投资组合</a></li>
+                <li><a href="#team">团队介绍</a></li>
+                <li><a href="#contact">联系我们</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>引领创新投资<br>创造卓越价值</h1>
+                <p>专注于科技创新、消费升级、产业互联网等领域的价值投资</p>
+                <a href="#about" class="cta-button">了解更多</a>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2>关于山顶资本</h2>
+                <div class="about-grid">
+                    <div class="about-content">
+                        <p>山顶资本成立于2020年，是一家专注于新兴产业投资的专业投资机构。我们致力于发掘和支持具有创新力的企业，助力其实现可持续发展。</p>
+                        <div class="stats">
+                            <div class="stat-item">
+                                <h3>100亿+</h3>
+                                <p>管理资产规模</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>50+</h3>
+                                <p>投资组合企业</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>300%</h3>
+                                <p>年均回报率</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="investment" class="section">
+            <div class="container">
+                <h2>投资策略</h2>
+                <div class="strategy-grid">
+                    <div class="strategy-card">
+                        <h3>科技创新</h3>
+                        <p>投资人工智能、区块链、新能源等前沿科技领域</p>
+                    </div>
+                    <div class="strategy-card">
+                        <h3>消费升级</h3>
+                        <p>布局新消费、品牌升级、文化娱乐等领域</p>
+                    </div>
+                    <div class="strategy-card">
+                        <h3>产业互联网</h3>
+                        <p>关注产业数字化转型、供应链优化等机会</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="section">
+            <div class="container">
+                <h2>投资组合</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item" style="background: rgba(51, 51, 51, 0.3); position: relative;">
+                        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 15%; background: rgba(51, 51, 51, 0.8); z-index: 1;"></div>
+                        <div style="position: relative; z-index: 2;">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMjAwIDEwMCI+CiAgPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iNDAiIGZpbGw9IiNGNzkzMUEiLz4KICA8dGV4dCB4PSI1MCIgeT0iNjAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkJUQzwvdGV4dD4KPC9zdmc+" alt="Bitcoin" class="portfolio-logo">
+                            <h3>Bitcoin (BTC)</h3>
+                            <p>全球市值第一的加密货币 (15%)</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" style="background: rgba(51, 51, 51, 0.3); position: relative;">
+                        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 80%; background: rgba(51, 51, 51, 0.8); z-index: 1;"></div>
+                        <div style="position: relative; z-index: 2;">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMjAwIDEwMCI+CiAgPHJlY3QgeD0iMTAiIHk9IjEwIiB3aWR0aD0iODAiIGhlaWdodD0iODAiIGZpbGw9IiMyMzI5MkYiLz4KICA8dGV4dCB4PSI1MCIgeT0iNjAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlhSUDwvdGV4dD4KPC9zdmc+" alt="XRP" class="portfolio-logo">
+                            <h3>Ripple (XRP)</h3>
+                            <p>领先的跨境支付解决方案 (80%)</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" style="background: rgba(51, 51, 51, 0.3); position: relative;">
+                        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 5%; background: rgba(51, 51, 51, 0.8); z-index: 1;"></div>
+                        <div style="position: relative; z-index: 2;">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMjAwIDEwMCI+CiAgPHBvbHlnb24gcG9pbnRzPSI1MCwxMCA5MCw1MCA1MCw5MCAxMCw1MCIgZmlsbD0iIzAwRkZBMyIvPgogIDx0ZXh0IHg9IjUwIiB5PSI2MCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI0IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+U09MPC90ZXh0Pgo8L3N2Zz4=" alt="Solana" class="portfolio-logo">
+                            <h3>Solana (SOL)</h3>
+                            <p>高性能区块链平台 (5%)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" class="section">
+            <div class="container">
+                <h2>核心团队</h2>
+                <div class="team-grid">
+                    <div class="team-member" onmouseover="this.querySelector('.role').style.display='block'" onmouseout="this.querySelector('.role').style.display='none'" style="position: relative;">
+                        <!-- [需要替换] team1.jpg - 建议尺寸: 300x300px, 正方形人像照片 -->
+                        <img src="yanghao.jpg" alt="团队成员">
+                        <h3>杨浩</h3>
+                        <p>创始人</p>
+                        <p>前某知名投行董事总经理，10年投资经验</p>
+                        <p class="role" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.8); color: white; padding: 10px; border-radius: 5px;">精神领袖</p>
+                    </div>
+
+                    <div class="team-member" onmouseover="this.querySelector('.role').style.display='block'" onmouseout="this.querySelector('.role').style.display='none'" style="position: relative;">
+                        <!-- [需要替换] team1.jpg - 建议尺寸: 300x300px, 正方形人像照片 -->
+                        <img src="zhaohongyang.jpg" alt="团队成员">
+                        <h3>赵洪阳</h3>
+                        <p>创始合伙人</p>
+                        <p>前某知名医药大学专业，10年医药行业经验</p>
+                        <p class="role" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.8); color: white; padding: 10px; border-radius: 5px;">形象大使</p>
+                    </div>
+                    <!-- 可以添加更多团队成员 -->
+                    
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2>联系我们</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>地址</h3>
+                        <p>浙江省杭州市拱墅区山顶大厦</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>电话</h3>
+                        <p>15557994911</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>邮箱</h3>
+                        <p>976402120@qq.com</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content" style="display: flex; justify-content: center; align-items: center;">
+                <div class="footer-logo" style="text-align: center;">
+                    <!-- 使用SVG格式的logo,更清晰且支持缩放 -->
+                    <svg width="80" height="80" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- 山形图案 -->
+                        <path d="M20 5L35 35H5L20 5Z" fill="#007AFF"/>
+                        <!-- 小山峰 -->
+                        <path d="M20 15L28 32H12L20 15Z" fill="#1a1a1a"/>
+                        <!-- 圆形光环 -->
+                        <circle cx="20" cy="20" r="18" stroke="#007AFF" stroke-width="2" fill="none"/>
+                    </svg>
+                    <h2 class="company-name">山顶资本</h2>
+                    <p class="copyright">因为相信不可能的事情，这个世界才变得有趣</p>
+                </div>
+                
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">© 2025 山顶资本 | 保留所有权利</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
