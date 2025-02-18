@@ -30,7 +30,7 @@ app = Flask(__name__)
 PORT = os.getenv('PORT', 5001)
 
 # 修改 CORS 配置
-CORS(app, origins=["https://your-netlify-site.netlify.app"])
+CORS(app, origins=["web-production-ff115.up.railway.app"])
 
 # API 配置
 API_KEY = 'sk-c6a8f65174a34a12839592be8eaae6c1'
