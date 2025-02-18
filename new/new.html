@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 技术新闻</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' http://localhost:* http://127.0.0.1:*; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // 忽略特定的错误
+        window.addEventListener('error', function(event) {
+            if (event.filename && (
+                event.filename.includes('index.js') || 
+                event.filename.includes('builder.js') ||
+                event.filename.includes('Wallet') ||
+                event.filename.includes('asyncToGenerator') ||
+                event.filename.includes('inpage.js') ||
+                event.filename.includes('contentscript.js')
+            )) {
+                event.preventDefault();
+                return false;
+            }
+        }, true);
+    </script>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>AI 技术新闻</h1>
+            </div>
+            <p class="update-time">最后更新: <span id="lastUpdate">加载中...</span></p>
+        </header>
+        
+        <main id="newsContainer">
+            <div class="loading">
+                <div class="loading-spinner"></div>
+                <p>正在获取最新AI资讯...</p>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>每日早8点自动更新 | Powered by DeepSeek-R1</p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="news.js"></script>
+</body>
+</html> 
