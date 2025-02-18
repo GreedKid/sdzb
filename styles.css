@@ -1,0 +1,770 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #1a1a1a;
+    --accent-color: #007AFF;
+    --text-color: #ffffff;
+    --secondary-color: #333;
+}
+
+body {
+    font-family: 'Noto Sans SC', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--primary-color);
+    overflow-x: hidden;
+}
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* 导航栏样式 */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.logo span {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+/* 英雄区域样式 */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(0,122,255,0.1) 0%, transparent 70%);
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    background: linear-gradient(45deg, #fff, #007AFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: rgba(255,255,255,0.8);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: var(--accent-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+}
+
+/* 部分样式 */
+.section {
+    padding: 6rem 0;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    background: linear-gradient(45deg, #fff, #007AFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 关于我们部分 */
+.about-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+}
+
+.stat-item h3 {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+/* 投资策略部分 */
+.strategy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.strategy-card {
+    padding: 2rem;
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.strategy-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.1);
+}
+
+.strategy-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+/* 团队部分 */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.team-member {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+/* 联系我们部分 */
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.contact-item {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+}
+
+/* 页脚样式 */
+footer {
+    background: rgba(26, 26, 26, 0.95);
+    padding: 4rem 0 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    /* 导航栏适配 */
+    header {
+        padding: 0.5rem 0;
+    }
+
+    nav {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    /* 首页标题适配 */
+    .hero h1 {
+        font-size: 2.5rem;
+        padding: 0 1rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+
+    /* 关于我们部分适配 */
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* 投资策略适配 */
+    .strategy-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+
+    .strategy-card {
+        margin-bottom: 1rem;
+    }
+
+    /* 投资组合适配 */
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+
+    .portfolio-item {
+        margin-bottom: 1rem;
+    }
+
+    /* 团队部分适配 */
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .team-member img {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* 联系我们适配 */
+    .contact-info {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+
+    /* 页脚适配 */
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    /* 音乐播放器适配 */
+    .music-player {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .music-toggle {
+        width: 35px;
+        height: 35px;
+    }
+
+    /* 容器通用适配 */
+    .container {
+        padding: 0 1rem;
+    }
+
+    .section {
+        padding: 3rem 0;
+    }
+
+    /* 文字大小适配 */
+    .section h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    /* 按钮适配 */
+    .cta-button {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        background: rgba(26, 26, 26, 0.98);
+        backdrop-filter: blur(10px);
+        padding: 2rem;
+        transition: top 0.3s ease;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .nav-menu.active {
+        top: 60px; /* header 高度 */
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+    }
+
+    /* 当菜单打开时的汉堡按钮动画 */
+    .menu-toggle.active span:first-child {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:last-child {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+}
+
+/* 小屏幕设备适配 */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .section h2 {
+        font-size: 1.8rem;
+    }
+
+    .stat-item h3 {
+        font-size: 2rem;
+    }
+
+    .team-member img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* 横屏模式适配 */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        height: auto;
+        padding: 6rem 0;
+    }
+
+    .team-member img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .section {
+        padding: 2rem 0;
+    }
+}
+
+/* 平板设备适配 */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .container {
+        padding: 0 2rem;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .strategy-grid,
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 高分辨率屏幕适配 */
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1400px;
+    }
+
+    .hero h1 {
+        font-size: 5rem;
+    }
+
+    .section h2 {
+        font-size: 3rem;
+    }
+}
+
+/* 投资组合样式 */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background: rgba(51, 51, 51, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+.portfolio-item:hover {
+    background: rgba(51, 51, 51, 0.5);
+}
+
+.portfolio-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5%;
+    background: rgba(51, 51, 51, 0.8);
+    z-index: 1;
+}
+
+.portfolio-item > * {
+    position: relative;
+    z-index: 2;
+}
+
+.portfolio-item img {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.portfolio-item h3 {
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.portfolio-item p {
+    color: rgba(255,255,255,0.8);
+}
+
+/* 添加音乐播放器样式 */
+.music-player {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.music-toggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(0, 122, 255, 0.2);
+    border: 2px solid #007AFF;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.music-toggle:hover {
+    background: rgba(0, 122, 255, 0.4);
+}
+
+.music-icon {
+    width: 24px;
+    height: 24px;
+    fill: #007AFF;
+}
+
+.music-toggle.playing {
+    animation: rotate 5s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 添加汉堡菜单样式 */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+.menu-toggle span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* 移动端适配修改 */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        background: rgba(26, 26, 26, 0.98);
+        backdrop-filter: blur(10px);
+        padding: 2rem;
+        transition: top 0.3s ease;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .nav-menu.active {
+        top: 60px; /* header 高度 */
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+    }
+
+    /* 当菜单打开时的汉堡按钮动画 */
+    .menu-toggle.active span:first-child {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:last-child {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+}
+
+/* AI 工具模块样式 */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.tool-card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.1);
+}
+
+.tool-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tool-card a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+}
+
+.tool-card p {
+    color: rgba(255,255,255,0.8);
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.new-badge {
+    background: #007AFF;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.coming-soon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255,255,255,0.1);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.6);
+}
+
+.disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.disabled:hover {
+    transform: none;
+}
+
+@media (max-width: 768px) {
+    .tools-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .tool-card {
+        padding: 1.2rem;
+    }
+}
+
+.portfolio-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-link:hover {
+    transform: translateY(-5px);
+}
+
+/* 添加一个小图标表示这是外部链接 */
+.portfolio-item h3::after {
+    content: '↗';
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 0.8em;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover h3::after {
+    opacity: 1;
+} 
